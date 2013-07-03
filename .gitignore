@@ -1,0 +1,11 @@
+/Build
+/DLL
+/Lib
+*.copied
+/Include/*
+ipch
+*.suo
+*.sdf
+*.opensdf
+*.aps
+*.user
