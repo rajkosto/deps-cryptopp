@@ -1,8 +1,8 @@
 /Build
 /DLL
 /Lib
+adhoc.cpp
 *.copied
-/Include/*
 ipch
 *.suo
 *.sdf
