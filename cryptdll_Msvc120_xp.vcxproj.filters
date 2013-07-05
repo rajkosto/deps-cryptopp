@@ -164,6 +164,9 @@
     <ClCompile Include="sha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sha3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="simple.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

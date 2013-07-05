@@ -296,6 +296,9 @@
     <ClCompile Include="sha.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sha3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="shacal2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -694,6 +697,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sha.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sha3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="shacal2.h">
