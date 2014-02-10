@@ -355,6 +355,9 @@
     <ClInclude Include="sha.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sha3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="simple.h">
       <Filter>Header Files</Filter>
     </ClInclude>

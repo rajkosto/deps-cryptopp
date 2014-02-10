@@ -1,18 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
-  <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Label="UserMacros">
+	<RuntimeLibraryRegex><![CDATA[<ItemDefinitionGroup Condition=".*']]>$(Configuration)\|$(Platform)<![CDATA['">(?:.*\n)*?.*<RuntimeLibrary>(.*)</RuntimeLibrary>(?:.*\n)*?.*</ItemDefinitionGroup>]]></RuntimeLibraryRegex>
+	<RuntimeLibrary>$([System.Text.RegularExpressions.Regex]::Match($([System.IO.File]::ReadAllText($(ProjectPath))), $(RuntimeLibraryRegex)).Result('$1'))</RuntimeLibrary>
+	<StaticLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreaded'">mt</StaticLibSuffix>
+	<StaticLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDebug'">mtd</StaticLibSuffix>
+	<StaticLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDLL'">md</StaticLibSuffix>
+	<StaticLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDebugDLL'">mdd</StaticLibSuffix>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies >cryptlib$(StaticLibSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)Lib\$(Platform)\$(PlatformToolset)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalDependencies>cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies >cryptlib$(StaticLibSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)Lib\$(Platform)\$(PlatformToolset)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
