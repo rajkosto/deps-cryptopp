@@ -128,13 +128,13 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Lib\$(Platform)\$(PlatformToolset)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|Win32'">DLL\$(Platform)\$(PlatformToolset)\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|Win32'">Lib\$(Platform)\$(PlatformToolset)\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|Win32'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|x64'">DLL\$(Platform)\$(PlatformToolset)\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|x64'">Lib\$(Platform)\$(PlatformToolset)\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Release|x64'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|Win32'">DLL\$(Platform)\$(PlatformToolset)\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|Win32'">Lib\$(Platform)\$(PlatformToolset)\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|Win32'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|x64'">DLL\$(Platform)\$(PlatformToolset)\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|x64'">Lib\$(Platform)\$(PlatformToolset)\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='DLL-Import Debug|x64'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Lib\$(Platform)\$(PlatformToolset)\$(Configuration)\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Build\$(ProjectName)\$(Platform)\$(PlatformToolset)\$(Configuration)\</IntDir>
@@ -254,7 +254,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <PreprocessorDefinitions>NDEBUG;CRYPTOPP_IMPORTS;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -300,7 +300,7 @@ echo unless it undergoes FIPS validation.
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <OmitFramePointers>true</OmitFramePointers>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <PreprocessorDefinitions>NDEBUG;CRYPTOPP_IMPORTS;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>
@@ -344,7 +344,7 @@ echo unless it undergoes FIPS validation.
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_DEBUG;CRYPTOPP_IMPORTS;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
@@ -386,7 +386,7 @@ echo unless it undergoes FIPS validation.
       <Optimization>Disabled</Optimization>
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>_DEBUG;CRYPTOPP_IMPORTS;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
