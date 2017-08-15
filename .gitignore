@@ -2,6 +2,7 @@
 /DLL
 /Lib
 /Bin
+/.vs
 adhoc.cpp
 *.copied
 ipch
