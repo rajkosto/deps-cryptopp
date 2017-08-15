@@ -1,6 +1,7 @@
 /Build
 /DLL
 /Lib
+/Bin
 adhoc.cpp
 *.copied
 ipch
