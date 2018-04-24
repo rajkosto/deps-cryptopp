@@ -2,7 +2,9 @@
 /DLL
 /Lib
 /Bin
+/obj
 /.vs
+/.localhistory
 adhoc.cpp
 *.copied
 ipch

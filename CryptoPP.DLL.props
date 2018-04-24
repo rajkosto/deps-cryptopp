@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+	<RuntimeLibraryRegex><![CDATA[<ItemDefinitionGroup Condition=".*']]>$(Configuration)\|$(Platform)<![CDATA['">(?:.*\n)*?.*<RuntimeLibrary>(.*)</RuntimeLibrary>(?:.*\n)*?.*</ItemDefinitionGroup>]]></RuntimeLibraryRegex>
+	<RuntimeLibrary>$([System.Text.RegularExpressions.Regex]::Match($([System.IO.File]::ReadAllText($(ProjectPath))), $(RuntimeLibraryRegex)).Result('$1'))</RuntimeLibrary>
+	<DynamicLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreaded'"></DynamicLibSuffix>
+	<DynamicLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDebug'">d</DynamicLibSuffix>
+	<DynamicLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDLL'"></DynamicLibSuffix>
+	<DynamicLibSuffix Condition="'$(RuntimeLibrary)'=='MultiThreadedDebugDLL'">d</DynamicLibSuffix>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CRYPTOPP_IMPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4275;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies >cryptopp$(DynamicLibSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)Lib\$(Platform)\$(PlatformToolset)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalDependencies >cryptopp$(DynamicLibSuffix).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)Lib\$(Platform)\$(PlatformToolset)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
