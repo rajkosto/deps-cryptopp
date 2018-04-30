@@ -397,4 +397,7 @@
       <Filter>Source Files</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="x64dll.asm" />
+  </ItemGroup>
 </Project>
